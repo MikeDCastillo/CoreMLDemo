@@ -16,7 +16,7 @@
 		733732251F8C556A00DBCF0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733732231F8C556A00DBCF0C /* Main.storyboard */; };
 		733732271F8C556A00DBCF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733732261F8C556A00DBCF0C /* Assets.xcassets */; };
 		7337322A1F8C556A00DBCF0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733732281F8C556A00DBCF0C /* LaunchScreen.storyboard */; };
-		733732341F8C6EBC00DBCF0C /* ImageOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733732331F8C6EBC00DBCF0C /* ImageOutput.swift */; };
+		733732341F8C6EBC00DBCF0C /* ImagePrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733732331F8C6EBC00DBCF0C /* ImagePrediction.swift */; };
 		733732381F8C729300DBCF0C /* TrainedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733732371F8C729300DBCF0C /* TrainedModels.swift */; };
 		7337323B1F8C741000DBCF0C /* ImageOutputCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733732391F8C741000DBCF0C /* ImageOutputCollectionViewController.swift */; };
 		7337323C1F8C741000DBCF0C /* IdentifiedObjectCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7337323A1F8C741000DBCF0C /* IdentifiedObjectCollectionViewController.xib */; };
@@ -34,6 +34,7 @@
 		737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */; };
 		73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */; };
 		73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */; };
+		73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E59BD71FD535F7008D8ECE /* Commands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,7 @@
 		733732261F8C556A00DBCF0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		733732291F8C556A00DBCF0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7337322B1F8C556A00DBCF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		733732331F8C6EBC00DBCF0C /* ImageOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOutput.swift; sourceTree = "<group>"; };
+		733732331F8C6EBC00DBCF0C /* ImagePrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePrediction.swift; sourceTree = "<group>"; };
 		733732371F8C729300DBCF0C /* TrainedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainedModels.swift; sourceTree = "<group>"; };
 		733732391F8C741000DBCF0C /* ImageOutputCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOutputCollectionViewController.swift; sourceTree = "<group>"; };
 		7337323A1F8C741000DBCF0C /* IdentifiedObjectCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentifiedObjectCollectionViewController.xib; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		73E59BD71FD535F7008D8ECE /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 		7337323E1F8C749E00DBCF0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				733732331F8C6EBC00DBCF0C /* ImageOutput.swift */,
+				733732331F8C6EBC00DBCF0C /* ImagePrediction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,7 +140,6 @@
 			children = (
 				733429F61F958BEC002D7685 /* UIImageHelper.swift */,
 				73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */,
-				73121A371FA7E03600617F8F /* CLGeocoderHelper.swift */,
 				733732371F8C729300DBCF0C /* TrainedModels.swift */,
 			);
 			path = Infrastructure;
@@ -147,7 +148,6 @@
 		733732401F8C74C100DBCF0C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				733732391F8C741000DBCF0C /* ImageOutputCollectionViewController.swift */,
 				735BCF2A1FB20A9D00E84747 /* OutputHistoryViewController.swift */,
 			);
 			path = "View Controllers";
@@ -156,7 +156,6 @@
 		733732411F8C74CF00DBCF0C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				73121A351FA0DE8000617F8F /* LocationManager.swift */,
 				733429F41F93FD7A002D7685 /* ImageController.swift */,
 			);
 			name = Controllers;
@@ -182,9 +181,12 @@
 		73398CBC1FAEA14E0054DB71 /* inProgress */ = {
 			isa = PBXGroup;
 			children = (
+				733732391F8C741000DBCF0C /* ImageOutputCollectionViewController.swift */,
+				73121A351FA0DE8000617F8F /* LocationManager.swift */,
 				735BCF281FB03ECF00E84747 /* AlphanumController.swift */,
 				735BCF221FB02DB600E84747 /* DateHelper.swift */,
 				735BCF2C1FB77CD500E84747 /* CoreDataManager.swift */,
+				73121A371FA7E03600617F8F /* CLGeocoderHelper.swift */,
 				735BCF2E1FB77DD600E84747 /* ImageOutputController.swift */,
 				735BCF241FB02FA500E84747 /* LocationHelper.swift */,
 				73398CBA1FAEA0140054DB71 /* RestAPIController.swift */,
@@ -198,6 +200,7 @@
 			children = (
 				733429F01F934031002D7685 /* Reactor.swift */,
 				735BCF1F1FB0266500E84747 /* App.swift */,
+				73E59BD71FD535F7008D8ECE /* Commands.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -289,11 +292,12 @@
 				735BCF231FB02DB600E84747 /* DateHelper.swift in Sources */,
 				735BCF291FB03ECF00E84747 /* AlphanumController.swift in Sources */,
 				735BCF201FB0266500E84747 /* App.swift in Sources */,
-				733732341F8C6EBC00DBCF0C /* ImageOutput.swift in Sources */,
+				733732341F8C6EBC00DBCF0C /* ImagePrediction.swift in Sources */,
 				73121A361FA0DE8000617F8F /* LocationManager.swift in Sources */,
 				733732201F8C556A00DBCF0C /* AppDelegate.swift in Sources */,
 				73121A381FA7E03600617F8F /* CLGeocoderHelper.swift in Sources */,
 				733732381F8C729300DBCF0C /* TrainedModels.swift in Sources */,
+				73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */,
 				735BCF271FB03E6F00E84747 /* Alphanum_28x28.mlmodel in Sources */,
 				733429F51F93FD7A002D7685 /* ImageController.swift in Sources */,
 				737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */,

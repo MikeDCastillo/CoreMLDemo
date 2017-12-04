@@ -10,30 +10,72 @@ import UIKit
 
 class OutputHistoryViewController: UIViewController {
     
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var predictionLabel: UILabel!
-    @IBOutlet weak var probabilityLabel: UILabel!
-    @IBOutlet weak var recognizedTextLabel: UITextView!
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate let imagePickerManager = ImagePickerManager()
+    fileprivate let core = App.sharedCore
+    fileprivate var predictions: [ImagePrediction] {
+        return core.state.currentPredictions
+    }
+    fileprivate var image: UIImage? {
+        return core.state.currentImage
+    }
     
     // Life - Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupLabels()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        core.add(subscriber: self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        core.remove(subscriber: self)
+    }
+    
+    // IBActions
+    
+    @IBAction func imageViewTapped(_ sender: Any) {
+        imagePickerManager.presentPickerAlert(on: self)
+    }
+   
 }
 
 
 // MARK: - Fileprivate
 
-extension OutputHistoryViewController {
+extension OutputHistoryViewController: Subscriber {
     
-    fileprivate func setupLabels() {
-        locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-(Double.pi / 2.0)))
-        dateLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-(Double.pi / 2)))
+    internal func update(with state: AppState) {
+        imageView.image = state.currentImage
+        tableView.reloadData()
+    }
+    
+}
+
+
+// MARK: - TableView Data Source
+
+
+extension OutputHistoryViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return predictions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "predictionCell")!
+        let prediction = predictions[indexPath.row]
+        cell.textLabel?.text = prediction.predictedTitle
+        let accuracyDescription = String(format: "%.4f", prediction.accuracy)
+        cell.detailTextLabel?.text = accuracyDescription
+        return cell
     }
     
 }

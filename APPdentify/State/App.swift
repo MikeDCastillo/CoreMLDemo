@@ -6,27 +6,29 @@
 //  Copyright © 2017 Michael Castillo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum App {
-    
-    // Manages changes to the AppState
     static let sharedCore = Core(state: AppState())
-    
 }
 
-// Holds AppData
+
 struct AppState: State {
     
-    var imageOutputs = [ImageOutput]()
+    var currentImage: UIImage?
+    var currentPredictions = [ImagePrediction]()
     var error: Error?
     
     mutating func react(to event: Event) {
         switch event {
-        case let event as ImageOutputCreated:
-            imageOutputs.append(event.imageOutput)
-        case let event as ImageProcessingError:
-            self.error = event.error
+        case let event as ImageSelected:
+            currentImage = event.image
+        case let event as ImageProcessed:
+            currentPredictions = event.predictions
+            error = event.error
+            if error != nil {
+                currentPredictions = []
+            }
         default:
             break
         }
@@ -34,10 +36,11 @@ struct AppState: State {
     
 }
 
-struct ImageOutputCreated: Event {
-    var imageOutput: ImageOutput
+struct ImageSelected: Event {
+    var image: UIImage?
 }
 
-struct ImageProcessingError: Event {
-    var error: Error
+struct ImageProcessed: Event {
+    var predictions: [ImagePrediction]
+    var error: Error?
 }

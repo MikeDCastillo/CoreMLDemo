@@ -7,16 +7,11 @@
 //
 
 import UIKit
-import CoreLocation
-
 
 class ImageOutputCollectionViewController: UICollectionViewController {
     
-
-    // MARK: - Life Cycle
-
     var core = App.sharedCore
-    var imageOutputs = [ImageOutput]()
+    var predictions = [ImagePrediction]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +41,7 @@ class ImageOutputCollectionViewController: UICollectionViewController {
 extension ImageOutputCollectionViewController: Subscriber {
     
     func update(with state: AppState) {
-        imageOutputs = state.imageOutputs
+        predictions = state.currentPredictions
     }
     
 }
@@ -73,7 +68,7 @@ extension ImageOutputCollectionViewController {
         case .create:
             return 1
         case .history:
-            return imageOutputs.count
+            return predictions.count
         }
     }
     
@@ -86,7 +81,7 @@ extension ImageOutputCollectionViewController {
             return cell
         case .history:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageOutputCollectionViewCell.className, for: indexPath) as! ImageOutputCollectionViewCell
-            cell.update(with: imageOutputs[indexPath.item])
+            cell.update(with: predictions[indexPath.item])
             return cell
         }
     }

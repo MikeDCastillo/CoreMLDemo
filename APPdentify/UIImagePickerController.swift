@@ -12,6 +12,8 @@ class ImagePickerManager: NSObject {
     
     static let shared = ImagePickerManager()
     
+    var core = App.sharedCore
+    
     
     // MARK: - FilePrivate
     
@@ -57,31 +59,10 @@ class ImagePickerManager: NSObject {
 extension ImagePickerManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            try! UIImageJPEGRepresentation(pickedImage, 0.0)?.write(to: imagePath!)
-            ImageController.shared.predictImageWithUIKit(image: pickedImage, height: 224, width: 224)
-            
-            // TODO: -
-            //add into app state here
-          
-            // TODO: - process with Vision if unsuccessful
-            
-        }
+        guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+        core.fire(event: ImageSelected(image: selectedImage))
+        core.fire(command: ProcessImage(selectedImage))
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-}
-
-struct ProcessImage: Command {
-    
-    var image: UIImage
-    
-    func execute(state: AppState, core: Core<AppState>) {
-        //obtaining saving path
-        let fileManager = FileManager.default
-        let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-        let imagePath = documentsPath?.appendingPathComponent("image.jpg")
-        
     }
     
 }

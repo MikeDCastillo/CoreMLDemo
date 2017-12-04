@@ -23,13 +23,12 @@ class ImageOutputCollectionViewCell: UICollectionViewCell, Nameable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageOutputImageView: UIImageView!
     
-    func update(with imageOutput: ImageOutput) {
+    func update(with prediction: ImagePrediction) {
         // TODO: - add extension to Location and Date for string interpolation
 //        dateLabel.text = imageOutput.date
 //        locationLabel.text = imageOutput.location
-        titleLabel.text = imageOutput.title
-        imageOutputImageView.image = imageOutput.image
-        
+        titleLabel.text = prediction.predictedTitle
+//        imageOutputImageView.image = prediction.image
     }
   
 }
