@@ -18,6 +18,7 @@ extension UIImage {
         let attributes = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue]
         
         /// '&pixelBuffer' refers to address.
+        /// the pixelFormatType will be chosen based on the .mlmodel your bring into your file. read carefully. This will not work if you choose incorrectly
         let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(width), Int(height), kCVPixelFormatType_32RGBA, attributes as CFDictionary, &pixelBuffer)
         guard status == kCVReturnSuccess, let imageBuffer = pixelBuffer
             else { return nil }

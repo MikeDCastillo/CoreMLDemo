@@ -11,7 +11,6 @@ import UIKit
 class ImagePickerManager: NSObject {
     
     static let shared = ImagePickerManager()
-    
     var core = App.sharedCore
     
     
@@ -27,7 +26,7 @@ class ImagePickerManager: NSObject {
         imagePicker.allowsEditing = true
         viewController.present(imagePicker, animated: true, completion: nil)
     }
-    
+    // Creates a UIAlertController which we call in our ViewController to show the user and have them select a camera or library media choice.
    func presentPickerAlert(on viewController: UIViewController) {
         let alertController = UIAlertController(title: "", message: "Select Source", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -60,6 +59,8 @@ extension ImagePickerManager: UIImagePickerControllerDelegate, UINavigationContr
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+        // These hit our ImageController functions to process the Image picked, once the user has chosen an image
+        // The core handles firing events and commands which eventually make it back the state to update the AppState
         core.fire(event: ImageSelected(image: selectedImage))
         core.fire(command: ProcessImage(selectedImage))
         picker.dismiss(animated: true, completion: nil)

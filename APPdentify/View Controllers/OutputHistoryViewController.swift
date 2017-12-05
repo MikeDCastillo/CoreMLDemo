@@ -16,9 +16,11 @@ class OutputHistoryViewController: UIViewController {
     
     fileprivate let imagePickerManager = ImagePickerManager()
     fileprivate let core = App.sharedCore
+    /// Returns most recent predictions from AppState
     fileprivate var predictions: [ImagePrediction] {
         return core.state.currentPredictions
     }
+    /// Returns processed currentImage from our AppState
     fileprivate var image: UIImage? {
         return core.state.currentImage
     }
@@ -52,6 +54,7 @@ class OutputHistoryViewController: UIViewController {
 
 extension OutputHistoryViewController: Subscriber {
     
+    // Updates our UI through the AppState
     internal func update(with state: AppState) {
         imageView.image = state.currentImage
         tableView.reloadData()
@@ -61,7 +64,6 @@ extension OutputHistoryViewController: Subscriber {
 
 
 // MARK: - TableView Data Source
-
 
 extension OutputHistoryViewController: UITableViewDataSource {
     
@@ -73,6 +75,7 @@ extension OutputHistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "predictionCell")!
         let prediction = predictions[indexPath.row]
         cell.textLabel?.text = prediction.predictedTitle
+        /// changes the amount of decimals in our predictions
         let accuracyDescription = String(format: "%.4f", prediction.accuracy)
         cell.detailTextLabel?.text = accuracyDescription
         return cell

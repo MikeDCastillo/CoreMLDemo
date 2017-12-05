@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LR2-AE-HSZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Details" id="jQg-aE-XYK"/>
                                 </items>
@@ -80,6 +80,7 @@
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="Eyr-GF-PHe" appends="YES" id="ZhP-Hm-T4M"/>
+                                            <outletCollection property="gestureRecognizers" destination="Eyr-GF-PHe" appends="YES" id="3ez-xG-VBb"/>
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMN-3f-IbM">
@@ -126,14 +127,10 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="L11-hP-Aff" firstAttribute="leading" secondItem="QR8-iA-VKt" secondAttribute="leading" id="HHg-3D-i79"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L11-hP-Aff" firstAttribute="bottom" secondItem="LR2-AE-HSZ" secondAttribute="bottom" id="Evm-o6-6Wl"/>
                             <constraint firstItem="LR2-AE-HSZ" firstAttribute="trailing" secondItem="QR8-iA-VKt" secondAttribute="trailing" id="GQf-CV-Dno"/>
                             <constraint firstItem="QR8-iA-VKt" firstAttribute="leading" secondItem="oKb-X1-3pz" secondAttribute="leading" id="J3I-PA-JKq"/>
                             <constraint firstItem="kRP-DZ-CIB" firstAttribute="bottom" secondItem="QR8-iA-VKt" secondAttribute="bottom" id="YT5-T9-40a"/>

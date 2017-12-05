@@ -139,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				733429F61F958BEC002D7685 /* UIImageHelper.swift */,
-				73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */,
 				733732371F8C729300DBCF0C /* TrainedModels.swift */,
 			);
 			path = Infrastructure;
@@ -173,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */,
-				733732441F8C932300DBCF0C /* IdentifiedPictureCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -181,7 +179,9 @@
 		73398CBC1FAEA14E0054DB71 /* inProgress */ = {
 			isa = PBXGroup;
 			children = (
+				73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */,
 				733732391F8C741000DBCF0C /* ImageOutputCollectionViewController.swift */,
+				733732441F8C932300DBCF0C /* IdentifiedPictureCollectionViewCell.swift */,
 				73121A351FA0DE8000617F8F /* LocationManager.swift */,
 				735BCF281FB03ECF00E84747 /* AlphanumController.swift */,
 				735BCF221FB02DB600E84747 /* DateHelper.swift */,

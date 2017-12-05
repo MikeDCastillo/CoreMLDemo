@@ -13,6 +13,7 @@ class TrainedModels {
     
     /// Trained CoreMLModel - detects text
     static let alphanum = Alphanum_28x28()
+    
     /// Trained CoreMLModel - detects images, not as effecient as VGG16
     static let resnet50 = Resnet50()
     
