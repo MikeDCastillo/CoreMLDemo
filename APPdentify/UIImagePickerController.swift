@@ -57,12 +57,10 @@ class ImagePickerManager: NSObject {
 
 extension ImagePickerManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
-        // These hit our ImageController functions to process the Image picked, once the user has chosen an image
-        // The core handles firing events and commands which eventually make it back the state to update the AppState
         core.fire(event: ImageSelected(image: selectedImage))
-        core.fire(command: ProcessImage(selectedImage))
+        core.fire(command: ProcessImage(selectedImage)) // Handles image processing
         picker.dismiss(animated: true, completion: nil)
     }
     

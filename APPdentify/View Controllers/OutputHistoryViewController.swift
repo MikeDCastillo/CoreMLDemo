@@ -10,22 +10,17 @@ import UIKit
 
 class OutputHistoryViewController: UIViewController {
     
-    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate let imagePickerManager = ImagePickerManager()
     fileprivate let core = App.sharedCore
-    /// Returns most recent predictions from AppState
     fileprivate var predictions: [ImagePrediction] {
         return core.state.currentPredictions
     }
-    /// Returns processed currentImage from our AppState
-    fileprivate var image: UIImage? {
-        return core.state.currentImage
-    }
     
-    // Life - Cycle
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +36,7 @@ class OutputHistoryViewController: UIViewController {
         core.remove(subscriber: self)
     }
     
-    // IBActions
+    // MARK: - IBActions
     
     @IBAction func imageViewTapped(_ sender: Any) {
         imagePickerManager.presentPickerAlert(on: self)
@@ -55,8 +50,8 @@ class OutputHistoryViewController: UIViewController {
 extension OutputHistoryViewController: Subscriber {
     
     // Updates our UI through the AppState
-    internal func update(with state: AppState) {
-        imageView.image = state.currentImage
+    func update(with state: AppState) {
+        imageView.image = state.currentImage ?? #imageLiteral(resourceName: "photo-camera")
         tableView.reloadData()
     }
     
@@ -75,7 +70,6 @@ extension OutputHistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "predictionCell")!
         let prediction = predictions[indexPath.row]
         cell.textLabel?.text = prediction.predictedTitle
-        /// changes the amount of decimals in our predictions
         let accuracyDescription = String(format: "%.4f", prediction.accuracy)
         cell.detailTextLabel?.text = accuracyDescription
         return cell
