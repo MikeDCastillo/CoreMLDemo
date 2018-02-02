@@ -26,7 +26,6 @@
 		735BCF201FB0266500E84747 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF1F1FB0266500E84747 /* App.swift */; };
 		735BCF231FB02DB600E84747 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF221FB02DB600E84747 /* DateHelper.swift */; };
 		735BCF251FB02FA500E84747 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF241FB02FA500E84747 /* LocationHelper.swift */; };
-		735BCF271FB03E6F00E84747 /* Alphanum_28x28.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF261FB03E6F00E84747 /* Alphanum_28x28.mlmodel */; };
 		735BCF291FB03ECF00E84747 /* AlphanumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF281FB03ECF00E84747 /* AlphanumController.swift */; };
 		735BCF2B1FB20A9D00E84747 /* OutputHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF2A1FB20A9D00E84747 /* OutputHistoryViewController.swift */; };
 		735BCF2D1FB77CD500E84747 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF2C1FB77CD500E84747 /* CoreDataManager.swift */; };
@@ -34,6 +33,7 @@
 		737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */; };
 		73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */; };
 		73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */; };
+		73E46E802023E77400FB82F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E46E7F2023E77400FB82F0 /* Preview.swift */; };
 		73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E59BD71FD535F7008D8ECE /* Commands.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,6 @@
 		735BCF1F1FB0266500E84747 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		735BCF221FB02DB600E84747 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		735BCF241FB02FA500E84747 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
-		735BCF261FB03E6F00E84747 /* Alphanum_28x28.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Alphanum_28x28.mlmodel; sourceTree = "<group>"; };
 		735BCF281FB03ECF00E84747 /* AlphanumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphanumController.swift; sourceTree = "<group>"; };
 		735BCF2A1FB20A9D00E84747 /* OutputHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputHistoryViewController.swift; sourceTree = "<group>"; };
 		735BCF2C1FB77CD500E84747 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		73E46E7F2023E77400FB82F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		73E59BD71FD535F7008D8ECE /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */,
-				735BCF261FB03E6F00E84747 /* Alphanum_28x28.mlmodel */,
 				7337321F1F8C556A00DBCF0C /* AppDelegate.swift */,
 				7337322B1F8C556A00DBCF0C /* Info.plist */,
 				735BCF211FB0266D00E84747 /* State */,
@@ -172,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */,
+				73E46E7F2023E77400FB82F0 /* Preview.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -288,6 +288,7 @@
 				73398CB91FAE9F940054DB71 /* StringExtension.swift in Sources */,
 				73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */,
 				733429F11F934031002D7685 /* Reactor.swift in Sources */,
+				73E46E802023E77400FB82F0 /* Preview.swift in Sources */,
 				735BCF2D1FB77CD500E84747 /* CoreDataManager.swift in Sources */,
 				735BCF231FB02DB600E84747 /* DateHelper.swift in Sources */,
 				735BCF291FB03ECF00E84747 /* AlphanumController.swift in Sources */,
@@ -298,7 +299,6 @@
 				73121A381FA7E03600617F8F /* CLGeocoderHelper.swift in Sources */,
 				733732381F8C729300DBCF0C /* TrainedModels.swift in Sources */,
 				73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */,
-				735BCF271FB03E6F00E84747 /* Alphanum_28x28.mlmodel in Sources */,
 				733429F51F93FD7A002D7685 /* ImageController.swift in Sources */,
 				737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */,
 				73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */,

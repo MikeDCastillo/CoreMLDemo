@@ -13,8 +13,6 @@ class TrainedModels {
     
     /// Trained CoreMLModel - detects text
     // Check out https://wetalkit.xyz/text-recognition-using-vision-and-core-ml-73d8c1d3e239
-    // to see a project with this model to detect text
-    static let alphanum = Alphanum_28x28()
     
     /// Trained CoreMLModel - detects images, not as effecient as VGG16
     static let resnet50 = Resnet50()
