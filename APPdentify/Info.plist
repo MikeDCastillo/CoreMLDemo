@@ -9,7 +9,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>🤖 I am an artificial intelligence. I am learning more about the world through your camera 🤖</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string> We are 👽 studying your human customs 👾</string>
+	<string>To identify objects </string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

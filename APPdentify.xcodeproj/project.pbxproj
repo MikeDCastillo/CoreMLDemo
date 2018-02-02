@@ -34,6 +34,7 @@
 		73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */; };
 		73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */; };
 		73E46E802023E77400FB82F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E46E7F2023E77400FB82F0 /* Preview.swift */; };
+		73E46E822023EBAD00FB82F0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E46E812023EBAD00FB82F0 /* PreviewViewController.swift */; };
 		73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E59BD71FD535F7008D8ECE /* Commands.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		73E46E7F2023E77400FB82F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		73E46E812023EBAD00FB82F0 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		73E59BD71FD535F7008D8ECE /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				735BCF2A1FB20A9D00E84747 /* OutputHistoryViewController.swift */,
+				73E46E812023EBAD00FB82F0 /* PreviewViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */,
 				733429F51F93FD7A002D7685 /* ImageController.swift in Sources */,
 				737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */,
+				73E46E822023EBAD00FB82F0 /* PreviewViewController.swift in Sources */,
 				73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
