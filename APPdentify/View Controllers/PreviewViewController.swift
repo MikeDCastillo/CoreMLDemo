@@ -193,6 +193,9 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 let height = yMax - yMin
                 recognizedTextPositionTuples.append((rect: CGRect(x: x, y: y, width: width, height: height), text: text))
             }
+            //////////////////////////
+            // implement a func to turn into string to capture//
+            //////////////////////////
         }
         textObservations.removeAll()
         DispatchQueue.main.async {
