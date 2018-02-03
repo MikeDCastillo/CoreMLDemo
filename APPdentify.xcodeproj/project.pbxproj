@@ -32,6 +32,10 @@
 		735BCF2F1FB77DD600E84747 /* ImageOutputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF2E1FB77DD600E84747 /* ImageOutputController.swift */; };
 		737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */; };
 		73943B572024639100FDE22D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73943B562024639100FDE22D /* PreviewViewController.swift */; };
+		73943B5A20256D6200FDE22D /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73943B5920256D6200FDE22D /* TesseractOCR.framework */; };
+		73943B5D20256DAB00FDE22D /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73943B5C20256DAB00FDE22D /* TesseractOCR.framework */; };
+		73943B5F20256DB900FDE22D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73943B5E20256DB900FDE22D /* CoreImage.framework */; };
+		73943B6120256DD700FDE22D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73943B6020256DD700FDE22D /* libstdc++.6.0.9.tbd */; };
 		73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */; };
 		73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */; };
 		73E46E802023E77400FB82F0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E46E7F2023E77400FB82F0 /* PreviewView.swift */; };
@@ -66,6 +70,10 @@
 		735BCF2E1FB77DD600E84747 /* ImageOutputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOutputController.swift; sourceTree = "<group>"; };
 		737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		73943B562024639100FDE22D /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		73943B5920256D6200FDE22D /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "../../../Downloads/Tesseract Resources/TesseractOCR.framework"; sourceTree = "<group>"; };
+		73943B5C20256DAB00FDE22D /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		73943B5E20256DB900FDE22D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		73943B6020256DD700FDE22D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		73E46E7F2023E77400FB82F0 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
@@ -77,6 +85,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73943B6120256DD700FDE22D /* libstdc++.6.0.9.tbd in Frameworks */,
+				73943B5F20256DB900FDE22D /* CoreImage.framework in Frameworks */,
+				73943B5D20256DAB00FDE22D /* TesseractOCR.framework in Frameworks */,
+				73943B5A20256D6200FDE22D /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +101,7 @@
 				7337321E1F8C556A00DBCF0C /* APPdentify */,
 				733732421F8C74E600DBCF0C /* Resources */,
 				7337321D1F8C556A00DBCF0C /* Products */,
+				73943B5B20256DAB00FDE22D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +119,7 @@
 				737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */,
 				7337321F1F8C556A00DBCF0C /* AppDelegate.swift */,
 				7337322B1F8C556A00DBCF0C /* Info.plist */,
+				73943B5920256D6200FDE22D /* TesseractOCR.framework */,
 				735BCF211FB0266D00E84747 /* State */,
 				733732411F8C74CF00DBCF0C /* Controllers */,
 				7337323E1F8C749E00DBCF0C /* Model */,
@@ -206,6 +220,16 @@
 				73E59BD71FD535F7008D8ECE /* Commands.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		73943B5B20256DAB00FDE22D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73943B6020256DD700FDE22D /* libstdc++.6.0.9.tbd */,
+				73943B5E20256DB900FDE22D /* CoreImage.framework */,
+				73943B5C20256DAB00FDE22D /* TesseractOCR.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,9 +468,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UKSSV9PZ8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = APPdentify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikeC.APPdentify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -460,9 +490,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UKSSV9PZ8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = APPdentify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikeC.APPdentify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
