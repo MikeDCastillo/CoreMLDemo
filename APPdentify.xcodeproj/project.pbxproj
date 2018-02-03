@@ -40,6 +40,7 @@
 		73EF36A820257A06008F9BFF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF36A720257A06008F9BFF /* libstdc++.6.0.9.tbd */; };
 		73EF36AA20257A0E008F9BFF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF36A920257A0E008F9BFF /* CoreImage.framework */; };
 		73EF36AC20257E7B008F9BFF /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 73EF36AB20257E7B008F9BFF /* tessdata */; };
+		73EF36B02025AD3D008F9BFF /* Dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EF36AF2025AD3D008F9BFF /* Dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,9 @@
 		73EF36A720257A06008F9BFF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		73EF36A920257A0E008F9BFF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		73EF36AB20257E7B008F9BFF /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		73EF36AD2025AD3C008F9BFF /* APPdentify-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPdentify-Bridging-Header.h"; sourceTree = "<group>"; };
+		73EF36AE2025AD3D008F9BFF /* Dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dummy.h; path = APPdentify/Dummy.h; sourceTree = SOURCE_ROOT; };
+		73EF36AF2025AD3D008F9BFF /* Dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Dummy.m; path = APPdentify/Dummy.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,9 @@
 			children = (
 				735BCF2A1FB20A9D00E84747 /* OutputHistoryViewController.swift */,
 				73943B562024639100FDE22D /* PreviewViewController.swift */,
+				73EF36AE2025AD3D008F9BFF /* Dummy.h */,
+				73EF36AF2025AD3D008F9BFF /* Dummy.m */,
+				73EF36AD2025AD3C008F9BFF /* APPdentify-Bridging-Header.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 				TargetAttributes = {
 					7337321B1F8C556A00DBCF0C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -321,6 +329,7 @@
 				735BCF291FB03ECF00E84747 /* AlphanumController.swift in Sources */,
 				735BCF201FB0266500E84747 /* App.swift in Sources */,
 				733732341F8C6EBC00DBCF0C /* ImagePrediction.swift in Sources */,
+				73EF36B02025AD3D008F9BFF /* Dummy.m in Sources */,
 				73121A361FA0DE8000617F8F /* LocationManager.swift in Sources */,
 				733732201F8C556A00DBCF0C /* AppDelegate.swift in Sources */,
 				73121A381FA7E03600617F8F /* CLGeocoderHelper.swift in Sources */,
@@ -466,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UKSSV9PZ8;
 				ENABLE_BITCODE = NO;
@@ -479,6 +489,8 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikeC.APPdentify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPdentify/View Controllers/APPdentify-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UKSSV9PZ8;
 				ENABLE_BITCODE = NO;
@@ -501,6 +514,7 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikeC.APPdentify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPdentify/View Controllers/APPdentify-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
