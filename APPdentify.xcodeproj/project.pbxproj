@@ -32,8 +32,11 @@
 		735BCF2F1FB77DD600E84747 /* ImageOutputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BCF2E1FB77DD600E84747 /* ImageOutputController.swift */; };
 		737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */; };
 		73943B572024639100FDE22D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73943B562024639100FDE22D /* PreviewViewController.swift */; };
+		73B5248E2035622F00FD9A62 /* TesseractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5248D2035622F00FD9A62 /* TesseractController.swift */; };
+		73B524902037CEF100FD9A62 /* PredictedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5248F2037CEF100FD9A62 /* PredictedText.swift */; };
 		73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */; };
 		73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */; };
+		73C72EC2202A7E650093FFF2 /* TextProcessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C72EC1202A7E650093FFF2 /* TextProcessorViewController.swift */; };
 		73E46E802023E77400FB82F0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E46E7F2023E77400FB82F0 /* PreviewView.swift */; };
 		73E59BD81FD535F7008D8ECE /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E59BD71FD535F7008D8ECE /* Commands.swift */; };
 		73EF36A5202579F9008F9BFF /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF36A4202579F9008F9BFF /* TesseractOCR.framework */; };
@@ -71,8 +74,11 @@
 		735BCF2E1FB77DD600E84747 /* ImageOutputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOutputController.swift; sourceTree = "<group>"; };
 		737984CC1FD3ADC6006CFFD6 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		73943B562024639100FDE22D /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		73B5248D2035622F00FD9A62 /* TesseractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesseractController.swift; sourceTree = "<group>"; };
+		73B5248F2037CEF100FD9A62 /* PredictedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictedText.swift; sourceTree = "<group>"; };
 		73C0AFD41FAACDB400EF1244 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		73C0AFE01FAAD18200EF1244 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		73C72EC1202A7E650093FFF2 /* TextProcessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextProcessorViewController.swift; sourceTree = "<group>"; };
 		73E46E7F2023E77400FB82F0 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		73E59BD71FD535F7008D8ECE /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		73EF36A4202579F9008F9BFF /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = SOURCE_ROOT; };
@@ -140,6 +146,7 @@
 			children = (
 				7337323A1F8C741000DBCF0C /* IdentifiedObjectCollectionViewController.xib */,
 				733732231F8C556A00DBCF0C /* Main.storyboard */,
+				73C72EC1202A7E650093FFF2 /* TextProcessorViewController.swift */,
 				733732281F8C556A00DBCF0C /* LaunchScreen.storyboard */,
 			);
 			path = UI;
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				733732331F8C6EBC00DBCF0C /* ImagePrediction.swift */,
+				73B5248F2037CEF100FD9A62 /* PredictedText.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 		733732411F8C74CF00DBCF0C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				73B5248D2035622F00FD9A62 /* TesseractController.swift */,
 				733429F41F93FD7A002D7685 /* ImageController.swift */,
 			);
 			name = Controllers;
@@ -322,11 +331,13 @@
 				735BCF2F1FB77DD600E84747 /* ImageOutputController.swift in Sources */,
 				73398CB91FAE9F940054DB71 /* StringExtension.swift in Sources */,
 				73C0AFD51FAACDB400EF1244 /* UIViewExtension.swift in Sources */,
+				73B524902037CEF100FD9A62 /* PredictedText.swift in Sources */,
 				733429F11F934031002D7685 /* Reactor.swift in Sources */,
 				73E46E802023E77400FB82F0 /* PreviewView.swift in Sources */,
 				735BCF2D1FB77CD500E84747 /* CoreDataManager.swift in Sources */,
 				735BCF231FB02DB600E84747 /* DateHelper.swift in Sources */,
 				735BCF291FB03ECF00E84747 /* AlphanumController.swift in Sources */,
+				73B5248E2035622F00FD9A62 /* TesseractController.swift in Sources */,
 				735BCF201FB0266500E84747 /* App.swift in Sources */,
 				733732341F8C6EBC00DBCF0C /* ImagePrediction.swift in Sources */,
 				73EF36B02025AD3D008F9BFF /* Dummy.m in Sources */,
@@ -339,6 +350,7 @@
 				737984CD1FD3ADC6006CFFD6 /* Resnet50.mlmodel in Sources */,
 				73943B572024639100FDE22D /* PreviewViewController.swift in Sources */,
 				73C0AFE11FAAD18200EF1244 /* UIImagePickerController.swift in Sources */,
+				73C72EC2202A7E650093FFF2 /* TextProcessorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ import CoreML
 extension UIImage {
     
     // This is alternate way to get CVPixelBuffer out of an image, instead of using Vision Wrapper
-
+    
     func pixelBuffer(width: Int, height: Int) -> CVPixelBuffer? {
         var pixelBuffer: CVPixelBuffer?
         let attributes = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue]
@@ -24,7 +24,7 @@ extension UIImage {
             else { return nil }
         
         /// This saves memory. taking room for memory
-                // TODO: - read up on buffer lock flags. we're gonna use the raw value for now of 0
+        // TODO: - read up on buffer lock flags. we're gonna use the raw value for now of 0
         CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
         // this has to do with the associated address referenced in the constant status '&pixelBuffer'
         let imageData = CVPixelBufferGetBaseAddress(imageBuffer)
@@ -43,24 +43,29 @@ extension UIImage {
         return imageBuffer
     }
     
+    /// Take the H or W of the image (whichever is bigger of the 2) and equal that to our maxDimension parameter. We set the other dimension then, preserving the Aspect ratio. Finally, draw the original image into the new frame.
+    func scaleImage(_ maxDimension: CGFloat) -> UIImage? {
+        
+        var scaledSize = CGSize(width: maxDimension, height: maxDimension)
+        
+        if size.width > size.height {
+            let scaleFactor = size.height / size.width
+            scaledSize.height = scaledSize.width * scaleFactor
+        } else {
+            let scaleFactor = size.width / size.height
+            scaledSize.width = scaledSize.height * scaleFactor
+        }
+        
+        UIGraphicsBeginImageContext(scaledSize)
+        draw(in: CGRect(origin: .zero, size: scaledSize))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+
+    
 }
 
-
-// MARK: - Hacking With Swift UIImage extension
-//        func buffer() -> CVPixelBuffer? {
-//            return UIImage.buffer(from: self)
-//        }
-//
-//        static func buffer(from image: UIImage) -> CVPixelBuffer? {
-//            // as explained in https://www.hackingwithswift.com/whats-new-in-ios-11
-//            // ...
-//        }
-//
-//        func resizeTo(_ size: CGSize) -> UIImage? {
-//            UIGraphicsBeginImageContext(size)
-//            draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-//            let image = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsEndImageContext()
-//            return image
-//        }
+// https://www.hackingwithswift.com/whats-new-in-ios-11
 

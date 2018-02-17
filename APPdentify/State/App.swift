@@ -18,6 +18,7 @@ struct AppState: State {
     var currentImage: UIImage?
     var currentPredictions = [ImagePrediction]()
     var error: Error?
+    var processedText: String?
     
     mutating func react(to event: Event) {
         switch event {
@@ -34,6 +35,14 @@ struct AppState: State {
         }
     }
     
+}
+
+struct TextProcessed: Event {
+    var predictedText: String?
+}
+
+struct TextSelected: Event {
+    var image: UIImage?
 }
 
 struct ImageSelected: Event {

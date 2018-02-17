@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         textDetectionRequest = VNDetectTextRectanglesRequest(completionHandler: handleDetection)
         textDetectionRequest!.reportCharacterBoxes = true
     }
+  
     private func configureCamera() {
         preview.session = session
         let cameraDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)

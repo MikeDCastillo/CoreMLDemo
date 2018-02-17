@@ -12,6 +12,7 @@ class ImagePickerManager: NSObject {
     
     static let shared = ImagePickerManager()
     var core = App.sharedCore
+    let tesseractController = TesseractController()
     
     
     // MARK: - FilePrivate
@@ -27,7 +28,7 @@ class ImagePickerManager: NSObject {
         viewController.present(imagePicker, animated: true, completion: nil)
     }
     // Creates a UIAlertController which we call in our ViewController to show the user and have them select a camera or library media choice.
-   func presentPickerAlert(on viewController: UIViewController) {
+    func presentPickerAlert(on viewController: UIViewController) {
         let alertController = UIAlertController(title: "", message: "Select Source", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(dismissAction)
@@ -58,10 +59,21 @@ class ImagePickerManager: NSObject {
 extension ImagePickerManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
-        core.fire(event: ImageSelected(image: selectedImage))
-        core.fire(command: ProcessImage(selectedImage)) // Handles image processing
-        picker.dismiss(animated: true, completion: nil)
+        /* for regular object identification
+         guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+         core.fire(event: ImageSelected(image: selectedImage))
+         core.fire(command: ProcessImage(selectedImage)) // Handles image processing
+         */
+        
+        //////////this is for text recognition using teseract
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let scaledImage = selectedImage.scaleImage(640) else { return }
+      
+        ///////////
+        
+        picker.dismiss(animated: true, completion: {
+        self.tesseractController.performTesseractImageRecognition(withTextIn: scaledImage)
+        })
     }
     
 }

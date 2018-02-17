@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VKV-6H-Xwx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXu-5F-Wj9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -53,13 +53,69 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPh-fP-xi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="501"/>
+            <point key="canvasLocation" x="2207" y="-22"/>
+        </scene>
+        <!--Text Processor View Controller-->
+        <scene sceneID="QNp-MJ-1Bx">
+            <objects>
+                <viewController id="qXu-5F-Wj9" userLabel="Text Processor View Controller" customClass="TextProcessorViewController" customModule="APPdentify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVL-2Q-mFB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Analyzed text will go here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FPb-5i-M9b">
+                                <rect key="frame" x="16" y="331" width="343" height="268"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-uA-QvC">
+                                <rect key="frame" x="67" y="91" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="720-A7-FvU" appends="YES" id="hOQ-1c-1Al"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC6-s3-tMm">
+                                <rect key="frame" x="148" y="264" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Process"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmy-5A-3VH">
+                                <rect key="frame" x="148" y="264" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Process"/>
+                                <connections>
+                                    <action selector="processedButtonTapped:" destination="qXu-5F-Wj9" eventType="touchUpInside" id="RUi-0F-pDD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="caw-RF-U2q"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="TtR-uA-QvC" id="UGD-rZ-odn"/>
+                        <outlet property="processButton" destination="TC6-s3-tMm" id="UQT-80-w1a"/>
+                        <outlet property="processedTextView" destination="FPb-5i-M9b" id="mYF-Ey-TaV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgJ-fk-oKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="720-A7-FvU">
+                    <connections>
+                        <action selector="cameraViewPressed:" destination="qXu-5F-Wj9" id="TwM-tD-M31"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2231.1999999999998" y="690.40479760119945"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vOz-aP-AW2">
             <objects>
                 <viewController id="VKV-6H-Xwx" customClass="ViewController" customModule="APPdentify" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7RM-VL-eu9" userLabel="Preview View" customClass="PreviewView" customModule="APPdentify" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="7RM-VL-eu9" userLabel="UIView" customClass="PreviewView" customModule="APPdentify" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62w-Af-wbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366" y="-728"/>
+            <point key="canvasLocation" x="1365.5999999999999" y="-728.18590704647681"/>
         </scene>
         <!--Output History View Controller-->
         <scene sceneID="RSF-yH-LaI">
